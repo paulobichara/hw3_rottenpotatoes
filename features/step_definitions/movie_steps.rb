@@ -14,6 +14,9 @@ Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  page.body is the entire content of the page as a string.
   flunk "Unimplemented"
 end
+Then /^(?:|I )should see all of the movies/ do
+  page.all('table#movies tr').count.should == 11
+end
 
 # Make it easier to express checking or unchecking several boxes at once
 #  "When I uncheck the following ratings: PG, G, R"
